@@ -101,7 +101,42 @@
             <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
             <div class="bg-black rounded-4 p-3 flex-fill">
                 <!-- Votre code -->
-
+                <table class="table">
+                    <thead>
+                    <th class="text-warning" scope="col">Prénom</th>
+                    <th class="text-warning" scope="col">Nom</th>
+                    <th class="text-warning" scope="col">Email</th>
+                    <th class="text-warning" scope="col">Premium</th>
+                    <th class="text-warning" scope="col">Actions</th>
+                    </thead>
+                    <?php foreach ($comptes as $compte): ?>
+                        <?php ["prenom" => $prenom, "nom" => $nom, "email" => $email, "premium" => $premium] = $compte ?>
+                        <?php if ($premium): ?>
+                            <tbody>
+                            <tr>
+                                <th><?= $prenom ?></th>
+                                <td><?= $nom ?></td>
+                                <td><?= $email ?></td>
+                                <td>oui</td>
+                                <td>
+                                    <button class="text-white btn btn-danger p-2 rounded-2">Supprimer</button>
+                                    <button class="text-white btn btn-warning p-2 rounded-2">Modifier</button>
+                                </td>
+                            </tr>
+                        <?php else : ?>
+                            <th><?= $prenom ?></th>
+                            <td><?= $nom ?></td>
+                            <td><?= $email ?></td>
+                            <td>non</td>
+                            <td>
+                                <button class="text-white btn btn-danger p-2 rounded-2">Supprimer</button>
+                                <button class="text-white btn btn-warning p-2 rounded-2">Modifier</button>
+                                <button class="text-white btn btn-success p-2 rounded-2">Premium</button>
+                            </td>
+                            </tbody>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </table>
             </div>
         </div>
     </div>
@@ -123,7 +158,46 @@
             <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
             <div class="bg-black rounded-4 p-3 flex-fill">
                 <!-- Votre code -->
-
+                <div class="container text-center">
+                    <?php foreach ($comptes as $compte): ?>
+                        <?php ["prenom" => $prenom, "nom" => $nom, "email" => $email, "premium" => $premium] = $compte ?>
+                        <?php if ($premium): ?>
+                            <div class="row">
+                                <div class="col-md-3 ">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?= $nom . " " . $prenom ?></h5>
+                                            <p class="card-text"><?= $email ?></p>
+                                            <p class="card-text">Premium</p>
+                                            <button class="text-white btn btn-danger p-2 rounded-2 p-1"><i
+                                                        class="bi bi-trash"></i></button>
+                                            <button class="text-white btn btn-warning p-2 rounded-2 p-1"><i
+                                                        class="bi bi-pencil-square"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <div class="row">
+                                <div class="col-md-3 ">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?= $nom . " " . $prenom ?></h5>
+                                            <p class="card-text"><?= $email ?></p>
+                                            <p class="card-text">Premium</p>
+                                            <button class="text-white btn btn-danger p-2 rounded-2 p-1"><i
+                                                        class="bi bi-trash"></i></button>
+                                            <button class="text-white btn btn-warning p-2 rounded-2 p-1"><i
+                                                        class="bi bi-pencil-square"></i></button>
+                                            <button class="text-white btn btn-success p-2 rounded-2 p-1"><i
+                                                        class="bi bi-currency-euro"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
     </div>

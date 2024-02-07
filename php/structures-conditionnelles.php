@@ -65,7 +65,11 @@ $age = 17;
                 <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
                 <div class="bg-black rounded-4 p-3 flex-fill">
                     <!-- Votre code -->
-
+                    <?php if ($age < 18) {
+                        echo "<p>$nom est mineur</p> ";
+                    } else {
+                        echo "<p>$nom est majeur</p>";
+                    } ?>
                 </div>
             </div>
         </div>
@@ -88,7 +92,11 @@ $age = 17;
                 <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
                 <div class="bg-black rounded-4 p-3 flex-fill">
                     <!-- Votre code -->
-
+                    <?php if ($age >= 18) { ?>
+                        <p><?= $nom ?> est majeur </p>
+                    <?php } else { ?>
+                        <p><?= $nom ?> est mineur </p>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -111,7 +119,11 @@ $age = 17;
                 <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
                 <div class="bg-black rounded-4 p-3 flex-fill">
                     <!-- Votre code -->
-
+                    <?php if ($age >= 18) : ?>
+                        <p><?= $nom ?> est majeur </p>
+                    <?php else : ?>
+                        <p><?= $nom ?> est mineur </p>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -131,7 +143,8 @@ $age = 17;
                 <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
                 <div class="bg-black rounded-4 p-3 flex-fill">
                     <!-- Votre code -->
-
+                    <?php $statut = ($age >= 18) ? "majeur" : "mineur" ?>
+                    <p><?= "$nom est $statut" ?></p>
                 </div>
             </div>
         </div>
@@ -153,7 +166,11 @@ $age = 17;
                 <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
                 <div class="bg-black rounded-4 p-3 flex-fill">
                     <!-- Votre code -->
+                    <?php $statut = ($age >= 18) ? "<span class='text-success'>majeur</span> " : "<span class='text-danger'>majeur</span> " ?>
+                    <p><?= "$nom est $statut" ?></p>
 
+                    <p><?= "$nom est" ?> <span
+                                class="<?= ($age >= 18) ? "text-success" : "text-danger" ?>">majeur</span></p>
                 </div>
             </div>
         </div>
