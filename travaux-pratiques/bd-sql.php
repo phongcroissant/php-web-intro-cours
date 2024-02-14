@@ -12,9 +12,7 @@ $requete->execute();
 //4. Récupération des enregistrements
 // Un enregistrement = un tableau associatif
 $etudiants = $requete->fetchAll(PDO::FETCH_ASSOC);
-print_r($etudiants);
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
