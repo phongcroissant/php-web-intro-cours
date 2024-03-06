@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <div class="container justify-content-center">
     <h1 class="text-center mt-5">Formulaire</h1>
 </div>
-<form action="" method="post" class="container" novalidate>
+<form action="" method="post" class=" mx-auto w-50 bg bg-danger p-5" novalidate>
     <div class="mb-3">
         <label for="nom" class="form-label">Nom *</label>
         <input type="text"
